@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Enjoy美食搜索</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="/static/css/normalize.css">
+        <link rel="stylesheet" href="/static/css/font-awesome.css">
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/templatemo-style.css">
+        <script src="/static/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <div id="loader-wrapper">
+            <div id="loader"></div>
+        </div>
+
+        <div class="content-bg"></div>
+        <div class="bg-overlay"></div>
+
+        <!-- SITE TOP -->
+        <div class="site-top">
+            <div class="site-header clearfix">
+                <div class="container">
+                    <a href="#" class="site-brand pull-left"><strong>小西天吃货</strong> Enjoy美食搜索</a>
+                    <div class="social-icons pull-right">
+                        <ul>
+                            <li><a href="http://weibo.com/pangguang" class="fa fa-weibo"></a></li>
+                            <!--li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-behance"></a></li>
+                            <li><a href="#" class="fa fa-dribbble"></a></li>
+                            <li><a href="#" class="fa fa-google-plus"></a></li-->
+                        </ul>
+                    </div>
+                </div>
+            </div> <!-- .site-header -->
+            <div class="site-banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h2>查找美食来自 <span class="blue">En</span><span class="green">joy</span></h2>
+                            <p>次次次次群里有人抱怨<a href="http://enjoy.ricebook.com"> Enjoy </a>没有搜索，正好想用python写点东西，于是就有了这个网站</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form action="/" method="post" class="subscribe-form">
+                            <fieldset class="col-md-offset-4 col-md-3 col-sm-8">
+                                <input type="text" id="subscribe-email" name="keyword" placeholder="请输入美食关键词...">
+                            </fieldset>
+                            <fieldset class="col-md-5 col-sm-4">
+                                <input type="submit" id="subscribe-submit" class="button white" value="查找美食">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div> <!-- .site-banner -->
+        </div> <!-- .site-top -->
+        <div class="copyrights">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+        <!-- MAIN POSTS -->
+        <div class="main-posts">
+            <div class="container">
+                <div class="row">
+                    <div class="blog-masonry masonry-true">
+                        {%if rbs%}
+                        {%for rb in rbs%}
+                        <div class="post-masonry col-md-4 col-sm-6">
+                            <div class="post-thumb">
+                                <img src="{{rb['purl']}}" alt="">
+                                <div class="title-over">
+                                    <h4><a href="{{rb['url']}}"  target="_blank">{{rb['title']}}</a></h4>
+                                </div>
+                                <div class="post-hover text-center">
+                                    <div class="inside">
+                                        <i class="fa fa-plus"></i>
+                                        <span class="date">{{rb['price']}} {{rb['unit']}}</span>
+                                        <h4><a href="{{rb['url']}}" target="_blank">{{rb['title']}}</a></h4>
+                                        <p>{{rb['descp']}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%end%}<!-- /.post-masonry -->
+                        {%else%}
+                        <div class="post-masonry col-md-4 col-sm-6">
+                            <div class="post-thumb">
+                                <img src="/static/images/6.jpg" alt="">
+                                <div class="title-over">
+                                    <h4><a href="#">没找到</a></h4>
+                                </div>
+                                <div class="post-hover text-center">
+                                    <div class="inside">
+                                        <i class="fa fa-plus"></i>
+                                        <span class="date">听我说个笑话吧</span>
+                                        <h4><a href="#">没找到</a></h4>
+                                        <p>反弹是散户最后一次逃命的机会</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- /.post-masonry -->
+                        <div class="post-masonry col-md-4 col-sm-6">
+                            <div class="post-thumb">
+                                <img src="/static/images/7.jpg" alt="">
+                                <div class="title-over">
+                                    <h4><a href="#">你需要的美食</a></h4>
+                                </div>
+                                <div class="post-hover text-center">
+                                    <div class="inside">
+                                        <i class="fa fa-plus"></i>
+                                        <span class="date">15 Jan 2084</span>
+                                        <h4><a href="#">Donec nec metus non</a></h4>
+                                        <p>一根大阳线，千军万马来相见；
+两根大阳线，龙虎榜上机构现；
+三根大阳线，散户追高不听劝；
+四根大阳线，游资砸盘说再见……</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- /.post-masonry -->
+                        <div class="post-masonry col-md-4 col-sm-6">
+                            <div class="post-thumb">
+                                <img src="/static/images/8.jpg" alt="">
+                                <div class="title-over">
+                                    <h4><a href="#">请用其他关键词</a></h4>
+                                </div>
+                                <div class="post-hover text-center">
+                                    <div class="inside">
+                                        <i class="fa fa-plus"></i>
+                                        <h4><a href="#">请用其他关键词</a></h4>
+                                        <p>水果 下午 牛肉 。。。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- /.post-masonry -->
+                        {%end%}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="social-icons">
+                            <ul>
+                                <li><a href="http://weibo.com/pangguang" class="fa fa-weibo"></a></li>
+                                <!--li><a href="#" class="fa fa-twitter"></a></li>
+                                <li><a href="#" class="fa fa-behance"></a></li>
+                                <li><a href="#" class="fa fa-dribbble"></a></li>
+                                <li><a href="#" class="fa fa-google-plus"></a></li-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="copyright-text">Copyright &copy; 2046 小西天吃货  京ICP备09029416号 京公网安备11010802011168号 All Rights Reserved </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/static/js/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="/static/js/min/plugins.min.js"></script>
+        <script src="/static/js/min/main.min.js"></script>
+
+        <!-- Preloader -->
+        <script type="text/javascript">
+            //<![CDATA[
+            $(window).load(function() { // makes sure the whole site is loaded
+                $('#loader').fadeOut(); // will first fade out the loading animation
+                    $('#loader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+                $('body').delay(350).css({'overflow-y':'visible'});
+            })
+            //]]>
+        </script>
+	<!-- templatemo 434 masonry -->
+    </body>
+</html>
